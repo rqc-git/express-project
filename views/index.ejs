@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include('header', {data:"这是头部"}) %>
+
+    <!-- 转义，将title中标签输出 -->
+    <h1><%= title %></h1>
+    <!-- 不转义，解析标签 -->
+    <p><%- title %></p>
+    <!-- 转义，直接输出 <% title %> -->
+    <p><%% title %%></p>
+
+    <!-- 注释 -->
+    <%# 这是后端注释，页面不输出的%>
+
+    <!-- 流程控制语法 -->
+    <p>
+      <% if(title === '首页') {%>
+        <p>这里是首页</p>
+      <% } else {%>
+        <p>这里是其他页面</p>
+      <% } %>
+    </p>
+  </body>
+</html>
